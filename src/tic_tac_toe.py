@@ -10,7 +10,10 @@ class Game:
     def __init__(self, master):
 
         master.title('Tic Tac Toe')
-        master.geometry('750x500')
+        master.geometry('768x600')
+        
+        master.resizable(False, False)
+        master.config(bg='skyblue')
 
         messagebox.showinfo("WELCOME", "Welcome to the Tic tac Toe Game!!")
 
@@ -26,34 +29,34 @@ class Game:
         self.eight_clicked = False
         self.nine_clicked = False
 
-        self.result = Label(text="You Won!", font="algerian 50 bold underline", fg="blue")
+        self.result = Label(text="Tic Tac Toe Game", font="algerian 50 bold underline", fg="darkred", bg='skyblue')
         self.result.grid(row=0, column=0, columnspan=3)
 
-        self.button_one = Button(text="X", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_one_clicked)
+        self.button_one = Button(text="X", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_one_clicked)
         self.button_one.grid(row=1, column=0)
 
-        self.button_two = Button(text="X", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_two_clicked)
+        self.button_two = Button(text="X", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_two_clicked)
         self.button_two.grid(row=1, column=1)
 
-        self.button_three = Button(text="X", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_three_clicked)
+        self.button_three = Button(text="X", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_three_clicked)
         self.button_three.grid(row=1, column=2)
 
-        self.button_four = Button(text="O", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_four_clicked)
+        self.button_four = Button(text="O", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_four_clicked)
         self.button_four.grid(row=2, column=0)
 
-        self.button_five = Button(text="O", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_five_clicked)
+        self.button_five = Button(text="O", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_five_clicked)
         self.button_five.grid(row=2, column=1)
 
-        self.button_six = Button(text="O", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_six_clicked)
+        self.button_six = Button(text="O", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_six_clicked)
         self.button_six.grid(row=2, column=2)
 
-        self.button_seven = Button(text="", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_seven_clicked)
+        self.button_seven = Button(text="", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_seven_clicked)
         self.button_seven.grid(row=3, column=0)
 
-        self.button_eight = Button(text="", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_eight_clicked)
+        self.button_eight = Button(text="", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_eight_clicked)
         self.button_eight.grid(row=3, column=1)
 
-        self.button_nine = Button(text="", font="times 50 bold", fg="blue", bg="red", width="6", bd=5, relief='solid', command=self.button_nine_clicked)
+        self.button_nine = Button(text="", font="times 50 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_nine_clicked)
         self.button_nine.grid(row=3, column=2)
 
     def button_one_clicked(self):
