@@ -22,7 +22,7 @@ class Game:
         messagebox.showinfo("WELCOME", "Welcome to the Tic tac Toe Game!!")
 
         ''' Boolean values to keep track whether a button was already clicked or not implemented as a list.
-         Initialilzing the list elements to False since no buttons are clicked for the first time. '''
+         Initialilzing the list elements to False since the buttons are not clicked. '''
 
         self.one_clicked = False
         self.two_clicked = False
@@ -68,24 +68,27 @@ class Game:
         self.button_nine = Button(text="", font="times 65 bold", fg="black", bg="green", width="6", bd=5, relief='solid', command=self.button_nine_clicked)
         self.button_nine.grid(row=3, column=2)
 
+        # List of all the buttons.
+
         self.buttons_list = [self.button_one, self.button_two, self.button_three, self.button_four, self.button_five, self.button_six, self.button_seven, self.button_eight, self.button_nine]
 
+        # Intializing an empty list which will hold the list of all buttons already clicked by the user.       
+        
+        self.already_clicked_buttons = []
+    
     def button_one_clicked(self):
 
         if not self.button_clicked_list[0]:
             
             self.button_one.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[0])
 
             self.random_button = random.randint(0, len(self.buttons_list)-1)
 
-            if self.random_button == self.button_one:
+            if self.random_button == 0 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
                 
-                return
+                self.button_one_clicked()
 
             else:
 
@@ -94,8 +97,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[0] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button]) 
-            self.buttons_list.remove(self.button_one)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -109,16 +119,13 @@ class Game:
 
             self.button_two.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[1])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_two:
+            if self.random_button == 1 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_two_clicked()
 
             else:
 
@@ -127,8 +134,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[1] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_two)
+
+            if len(self.buttons_list) > 0:
+                
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -142,16 +156,13 @@ class Game:
 
             self.button_three.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[2])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_three:
+            if self.random_button == 2 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_three_clicked()
 
             else:
 
@@ -161,8 +172,15 @@ class Game:
             
 
             self.button_clicked_list[2] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_three)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -176,16 +194,13 @@ class Game:
 
             self.button_four.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[3])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_four:
+            if self.random_button == 3 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_four_clicked()
 
             else:
 
@@ -194,8 +209,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[3] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_four)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -209,16 +231,13 @@ class Game:
 
             self.button_five.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[4])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_five:
+            if self.random_button == 4 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_five_clicked()
 
             else:
 
@@ -227,8 +246,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[4] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_five)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -242,16 +268,13 @@ class Game:
 
             self.button_six.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[5])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_six:
+            if self.random_button == 5 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_six_clicked()
 
             else:
 
@@ -260,8 +283,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[5] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_six)
+            
+            if len(self.buttons_list) > 0:
+                
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -275,16 +305,13 @@ class Game:
 
             self.button_seven.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[6])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_seven:
+            if self.random_button == 6 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_seven_clicked()
 
             else:
 
@@ -293,8 +320,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[6] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_seven)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -308,16 +342,13 @@ class Game:
 
             self.button_eight.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-
-                messagebox.showwarning("Warning", "The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[7])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_eight:
+            if self.random_button == 7 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_eight_clicked()
 
             else:
 
@@ -326,8 +357,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[7] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_eight)
+            
+            if len(self.buttons_list) > 0:
+
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
@@ -341,16 +379,13 @@ class Game:
 
             self.button_nine.config(text="X", bg='darkred', fg='white')
 
-            if len(self.buttons_list) == 0 or len(self.button_clicked_list) == 0:
-                
-                messagebox.showwarning("Warning","The list is empty!")
-                sys.exit()
+            self.already_clicked_buttons.append(self.buttons_list[8])
 
             self.random_button = random.randint(0, len(self.buttons_list) - 1)
 
-            if self.random_button == self.button_nine:
+            if self.random_button == 8 or self.buttons_list[self.random_button] in self.already_clicked_buttons:
 
-                return
+                self.button_nine_clicked()
 
             else:
 
@@ -359,8 +394,15 @@ class Game:
                 self.button_clicked_list[self.random_button] = True
 
             self.button_clicked_list[8] = True
-            self.buttons_list.remove(self.buttons_list[self.random_button])
-            self.buttons_list.remove(self.button_nine)
+            
+            if len(self.buttons_list) > 0:
+                
+                self.buttons_list.remove(self.buttons_list[self.random_button])
+
+            else:
+
+                messagebox.showwarning("Warning", "The list is empty!")
+                sys.exit()
 
         else:
 
