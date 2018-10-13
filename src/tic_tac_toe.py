@@ -80,7 +80,7 @@ class Game:
 
         if not self.button_clicked_list[0]:
             
-            self.button_one.config(text="X", bg='darkred', fg='white')
+            self.button_one.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[0])
 
@@ -117,7 +117,7 @@ class Game:
 
         if not self.button_clicked_list[1]:
 
-            self.button_two.config(text="X", bg='darkred', fg='white')
+            self.button_two.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[1])
 
@@ -154,7 +154,7 @@ class Game:
 
         if not self.button_clicked_list[2]:
 
-            self.button_three.config(text="X", bg='darkred', fg='white')
+            self.button_three.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[2])
 
@@ -192,7 +192,7 @@ class Game:
 
         if not self.button_clicked_list[3]:
 
-            self.button_four.config(text="X", bg='darkred', fg='white')
+            self.button_four.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[3])
 
@@ -229,7 +229,7 @@ class Game:
 
         if not self.button_clicked_list[4]:
 
-            self.button_five.config(text="X", bg='darkred', fg='white')
+            self.button_five.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[4])
 
@@ -266,7 +266,7 @@ class Game:
 
         if not self.button_clicked_list[5]:
 
-            self.button_six.config(text="X", bg='darkred', fg='white')
+            self.button_six.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[5])
 
@@ -303,7 +303,7 @@ class Game:
 
         if not self.button_clicked_list[6]:
 
-            self.button_seven.config(text="X", bg='darkred', fg='white')
+            self.button_seven.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[6])
 
@@ -340,7 +340,7 @@ class Game:
 
         if not self.button_clicked_list[7]:
 
-            self.button_eight.config(text="X", bg='darkred', fg='white')
+            self.button_eight.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[7])
 
@@ -377,7 +377,7 @@ class Game:
 
         if not self.button_clicked_list[8]:
 
-            self.button_nine.config(text="X", bg='darkred', fg='white')
+            self.button_nine.config(text="X", bg='darkred', fg='green')
 
             self.already_clicked_buttons.append(self.buttons_list[8])
 
